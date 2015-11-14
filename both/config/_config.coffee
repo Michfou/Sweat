@@ -1,5 +1,5 @@
 @Config =
-	name: 'My App'
+	name: 'Break a Sweat'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->

@@ -24,8 +24,7 @@
 					{{#autoForm id="add" collection="Posts" type="insert"}}
 					{{> afQuickField name="title"}}
 					{{> afQuickField name="content"}}
-					{{> afQuickField name="picture"}}
-					<button type="submit" class="btn btn-primary">{{_ "add_post_btn"}}</button>
+					<button>{{_ "add_post_btn"}}</button>
 					{{/autoForm}}
 				</div>
 		</div>
@@ -55,11 +54,6 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<p class="text-center">
-						{{#with getDoc picture 'Attachments'}}
-							<img src="{{url}}" class="img-thumbnail img-rounded">
-						{{/with}}
-					</p>
 					<div class="media">
 						<a class="pull-left" href="#">
 							{{> avatar userId=owner shape="circle"}}

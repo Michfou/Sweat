@@ -23,13 +23,6 @@ Schemas.Posts = new SimpleSchema
 			if this.isUpdate
 				new Date()
 
-	picture:
-		type: String
-		autoform:
-			afFieldInput:
-				type: 'fileUpload'
-				collection: 'Attachments'
-
 	owner:
 		type: String
 		regEx: SimpleSchema.RegEx.Id
