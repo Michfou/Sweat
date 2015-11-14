@@ -1,6 +1,6 @@
 @Posts = new Meteor.Collection('posts');
 
-Schemas.Posts = new SimpleSchema(
+Schemas.Postss = new SimpleSchema(
 	title:
 		type:String
 		max: 60
@@ -48,6 +48,11 @@ Schemas.Posts = new SimpleSchema(
 					value: user._id
 )
 
+Schemas.Posts = new SimpleSchema(
+	posst:
+		type: Schemas.Postss
+		optional: true
+)
 Posts.attachSchema(Schemas.Posts)
 
 Posts.helpers
