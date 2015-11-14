@@ -1,6 +1,6 @@
 @Posts = new Meteor.Collection('posts');
 
-Schemas.Posts = new SimpleSchema
+Schemas.Posts = new SimpleSchema(
 	title:
 		type:String
 		max: 60
@@ -9,6 +9,18 @@ Schemas.Posts = new SimpleSchema
 		type: String
 		autoform:
 			rows: 5
+
+	sport_dropdown:
+		type: String
+		label: 'Sport'
+		allowedValues: [
+			"Running"
+			"Basketball"
+			"Soccer"
+			"Golf"
+			"Ski"
+		]
+		optional: true
 
 	createdAt:
 		type: Date
@@ -34,6 +46,7 @@ Schemas.Posts = new SimpleSchema
 				_.map Meteor.users.find().fetch(), (user)->
 					label: user.emails[0].address
 					value: user._id
+)
 
 Posts.attachSchema(Schemas.Posts)
 

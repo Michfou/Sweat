@@ -5,4 +5,4 @@ Meteor.publishComposite 'user', ->
     find: (user) ->
       _id = user.profile?.picture or null
       ProfilePictures.find _id: _id
-    ]
+  ]
