@@ -18,3 +18,4 @@ Template.profile.events
 		Meteor.setTimeout ->
 			$('form#updatePicture').submit()
 		, 10
+

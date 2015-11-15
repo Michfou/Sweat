@@ -1,6 +1,7 @@
 @Posts = new Meteor.Collection('posts');
 @Search = new Meteor.Collection('searchs');
 
+
 Schemas.Postss = new SimpleSchema(
 	title:
 		type:String
@@ -92,7 +93,7 @@ Schemas.Params = new SimpleSchema(
 			"Montreal"
 			"Quebec"
 			"Sherbrooke"
-			"Trois-Rivières"
+			"Trois-Rivieres"
 		]
 
 	sport:
@@ -131,3 +132,5 @@ Schemas.Search = new SimpleSchema(
 )
 
 Search.attachSchema(Schemas.Search)
+
+

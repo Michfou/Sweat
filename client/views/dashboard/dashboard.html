@@ -1,18 +1,24 @@
+
 <template name="dashboard">
 	<div class="template-dashboard">
 		<div class="container">
 			<div class="row" id="champion-messages">
 				<div class="col-md-3">
-					{{> addPost}}
-					{{> favoritesSidebar}}
+                    {{> addPostPanel}}
                     {{> researchBox}}
+					{{> favoritesSidebar}}
 				</div>
 				<div class="col-md-9">
 					{{> posts}}
 				</div>
+
 			</div>
 		</div>
 	</div>
+</template>
+
+<template name="addPostPanel">
+    <button type="submit" class="btn btn-primary">Add a post</button>
 </template>
 
 <template name="addPost">
@@ -24,8 +30,8 @@
                 {{#autoForm id="add" collection="Posts" type="insert"}}
 					{{> afQuickField name="postWrapper" omitFields= "createdAt,updatedAt,owner"}}
 
-					<button>{{_ "add_post_btn"}}</button>
-					{{/autoForm}}
+                    <button>{{_ "add_post_btn"}}</button>
+                {{/autoForm}}
 		</div>
 	</div>
 </template>
@@ -115,3 +121,4 @@
 		{{/if}}
 	</div>
 </template>
+
