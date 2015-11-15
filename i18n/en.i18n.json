@@ -2,8 +2,8 @@
 
 	/*Config*/
 	"configName": "Break a Sweat",
-	"configTitle": "Find Your Sports Partners. Now.",
-	"configSubtitle": "Find your perfect sports partner and activities in your local area.",
+	"configTitle": "Find New Sports Partners. Now.",
+	"configSubtitle": "Find perfect sports partner and activities in your local area.",
 	
 	/*Home*/
 	"getstarted": "Get Started",
@@ -12,14 +12,13 @@
 	"intro": "Make Meteor Apps. Fast.",
 	"how": "How It Works",
 	"step_1": "Step 1",
-	"step_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"step_1_text": "Create an account & add your favorite sports.",
 	"step_2": "Step 2",
-	"step_2_text": "Oratio me istius philosophi non offendit; Qua tu etiam inprudens utebare non numquam.",
+	"step_2_text": "Post & find adds to find new sports partners. Anywhere.",
 	"step_3": "Step 3",
-	"step_3_text": "Et ille ridens: Video, inquit, quid agas; Duo Reges: constructio interrete.",
-	"section_ipad_header": "A revolutionary product",
-	"section_ipad_text": "Do really cool stuff really quickly",
-	"section_ipad_btn": "Made by MeteorFactory",
+	"step_3_text": "Make new friends. Be happy. Sweat.",
+	"section_ipad_header": "Your life will be instantly better.",
+	"section_ipad_text": "Find a new motivation. Reach new goals. Be proud.",
 	"final_text": "Your life will be instantly better.",
 	"final_cta": "Take a look",
 
