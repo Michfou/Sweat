@@ -41,16 +41,14 @@
 </template>
 
 <template name="researchBox">
-    <div class="template-add-post">
-        <div class="panel panel-default">
-        {{#autoForm id="updateProfile" collection='Search' type="update"}}
-            <div class="col-md-8">
-                {{> afQuickField name='search'}}
-                <button>{{_ "add_post_btn"}}</button>
+    <div class="panel panel-default">
+        {{#autoForm id="add" collection='Search' type="update"}}
+        <div class="col-md-14">
+            {{> afQuickField name='search'}}
+            <button type="submit" class="btn btn-primary">Search</button>
 
-            </div>
-        {{/autoForm}}
         </div>
+        {{/autoForm}}
     </div>
 </template>
 
@@ -59,6 +57,7 @@
 		<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
+                        <b>{{postWrapper.sport_dropdown}}</b>
 						{{postWrapper.title}}
 						<span class="pull-right">
 							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
@@ -72,6 +71,7 @@
 							{{> avatar userId=owner shape="circle"}}
 						</a>
 						<div class="media-body">
+                            <p>{{postWrapper.level_dropdown}}</p>
 							<p>{{postWrapper.content}}</p>
 							{{#if $eq owner User._id}}
 							<small>

@@ -1,5 +1,6 @@
 @Posts = new Meteor.Collection('posts');
 @Search = new Meteor.Collection('searchs');
+
 Schemas.Postss = new SimpleSchema(
 	title:
 		type:String
@@ -22,6 +23,15 @@ Schemas.Postss = new SimpleSchema(
 		]
 		optional: true
 
+	level_dropdown:
+		type: String
+		label: 'Level'
+		allowedValues: [
+			"Beginner"
+			"Intermediate"
+			"Expert"
+		]
+		optional: true
 
 	sport_date:
 		type:Date
@@ -74,6 +84,16 @@ Posts.helpers
 
 
 Schemas.Params = new SimpleSchema(
+
+	city:
+		type: String
+		label: 'City'
+		allowedValues: [
+			"Montreal"
+			"Quebec"
+			"Sherbrooke"
+			"Trois-Rivières"
+		]
 
 	sport:
 		type: String
