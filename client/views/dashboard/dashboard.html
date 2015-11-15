@@ -58,12 +58,12 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">
                         <b>{{postWrapper.sport_dropdown}}</b>
-						{{postWrapper.title}}
 						<span class="pull-right">
 							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
 							<i class="fa fa-comments"></i> {{commentCount _id}}
 						</span>
 					</h3>
+                    <h5>{{postWrapper.title}}</h5>
 				</div>
 				<div class="panel-body">
 					<div class="media">
@@ -71,7 +71,8 @@
 							{{> avatar userId=owner shape="circle"}}
 						</a>
 						<div class="media-body">
-                            <p>{{postWrapper.level_dropdown}}</p>
+                            <p>{{author}}</p>
+                            <p><i>Level: {{postWrapper.level_dropdown}}</i></p>
 							<p>{{postWrapper.content}}</p>
 							{{#if $eq owner User._id}}
 							<small>

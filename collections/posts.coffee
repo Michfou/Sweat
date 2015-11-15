@@ -11,6 +11,17 @@ Schemas.Postss = new SimpleSchema(
 		autoform:
 			rows: 5
 
+	city_dropdown:
+		type: String
+		label: 'City'
+		allowedValues: [
+			"Montreal"
+			"Quebec"
+			"Sherbrooke"
+			"Trois-Riviï¿½res"
+		]
+		optional: true
+
 	sport_dropdown:
 		type: String
 		label: 'Sport'
@@ -71,14 +82,16 @@ Schemas.Posts = new SimpleSchema(
 				_.map Meteor.users.find().fetch(), (user)->
 					label: user.emails[0].address
 					value: user._id
+
+
 )
 Posts.attachSchema(Schemas.Posts)
 
 Posts.helpers
 	author: ->
 		user = Meteor.users.findOne(@owner)
-		if user?.profile?.firstName? and user?.profile?.lastName
-			user.profile.firstName + ' ' + user.profile.lastName
+		if user?.profile?.firstName?
+			user.profile.firstName
 		else
 			user?.emails?[0].address
 
@@ -92,7 +105,7 @@ Schemas.Params = new SimpleSchema(
 			"Montreal"
 			"Quebec"
 			"Sherbrooke"
-			"Trois-Rivières"
+			"Trois-Riviï¿½res"
 		]
 
 	sport:
