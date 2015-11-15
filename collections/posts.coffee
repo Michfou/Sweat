@@ -22,6 +22,21 @@ Schemas.Postss = new SimpleSchema(
 		]
 		optional: true
 
+
+	sport_date:
+		type:Date
+		optional:true
+		autoValue: ->
+				new Date()
+)
+
+Schemas.Posts = new SimpleSchema(
+	postWrapper:
+		type: Schemas.Postss
+		label: " "
+		optional: true
+
+
 	createdAt:
 		type: Date
 		autoValue: ->
@@ -46,12 +61,6 @@ Schemas.Postss = new SimpleSchema(
 				_.map Meteor.users.find().fetch(), (user)->
 					label: user.emails[0].address
 					value: user._id
-)
-
-Schemas.Posts = new SimpleSchema(
-	posst:
-		type: Schemas.Postss
-		optional: true
 )
 Posts.attachSchema(Schemas.Posts)
 

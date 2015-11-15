@@ -17,16 +17,12 @@
 <template name="addPost">
 	<div class="template-add-post">
 		<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">{{_ "add_post"}}</h3>
-				</div>
-				<div class="panel-body">
 					{{#autoForm id="add" collection="Posts" type="insert"}}
-					{{> afQuickField name="posst"}}
+                    <h3 class="panel-title">{{_ "add_post"}}</h3>
+					{{> afQuickField name="postWrapper"}}
 
 					<button>{{_ "add_post_btn"}}</button>
 					{{/autoForm}}
-				</div>
 		</div>
 	</div>
 </template>

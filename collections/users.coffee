@@ -51,9 +51,9 @@ Schemas.UserProfile = new SimpleSchema(
 
   niveau_dropdown:
     type: String
-    label: 'Niveau Sportif'
+    label: 'Level'
     allowedValues: [
-      "Noob"
+      "Beginner"
       "Intermediate"
       "Expert"
     ]
