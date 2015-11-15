@@ -1,5 +1,5 @@
 @Posts = new Meteor.Collection('posts');
-
+@Search = new Meteor.Collection('searchs');
 Schemas.Postss = new SimpleSchema(
 	title:
 		type:String
@@ -71,3 +71,43 @@ Posts.helpers
 			user.profile.firstName + ' ' + user.profile.lastName
 		else
 			user?.emails?[0].address
+
+
+Schemas.Params = new SimpleSchema(
+
+	sport:
+		type: String
+		label: 'Sport'
+		allowedValues: [
+			"Running"
+			"Basketball"
+			"Soccer"
+			"Golf"
+			"Ski"
+		]
+		optional: true
+
+	level:
+		type: String
+		label: 'Level'
+		allowedValues: [
+			"Beginner"
+			"Intermediate"
+			"Expert"
+		]
+		optional: true
+
+	sport_date:
+		type:Date
+		optional:true
+		autoValue: ->
+			new Date()
+)
+
+Schemas.Search = new SimpleSchema(
+	search:
+		type: Schemas.Params
+		optional: true
+)
+
+Search.attachSchema(Schemas.Search)

@@ -5,6 +5,7 @@
 				<div class="col-md-3">
 					{{> addPost}}
 					{{> favoritesSidebar}}
+                    {{> researchBox}}
 				</div>
 				<div class="col-md-9">
 					{{> posts}}
@@ -17,9 +18,11 @@
 <template name="addPost">
 	<div class="template-add-post">
 		<div class="panel panel-default">
-					{{#autoForm id="add" collection="Posts" type="insert"}}
-                    <h3 class="panel-title">{{_ "add_post"}}</h3>
-					{{> afQuickField name="postWrapper"}}
+            <div class="panel-heading">
+                <h3 class="panel-title">{{_ "add_post"}}</h3>
+            </div>
+                {{#autoForm id="add" collection="Posts" type="insert"}}
+					{{> afQuickField name="postWrapper" omitFields= "createdAt,updatedAt,owner"}}
 
 					<button>{{_ "add_post_btn"}}</button>
 					{{/autoForm}}
@@ -37,12 +40,26 @@
 	</div>
 </template>
 
+<template name="researchBox">
+    <div class="template-add-post">
+        <div class="panel panel-default">
+        {{#autoForm id="updateProfile" collection='Search' type="update"}}
+            <div class="col-md-8">
+                {{> afQuickField name='search'}}
+                <button>{{_ "add_post_btn"}}</button>
+
+            </div>
+        {{/autoForm}}
+        </div>
+    </div>
+</template>
+
 <template name="post">
 	<div class="template-post">
 		<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						{{title}}
+						{{postWrapper.title}}
 						<span class="pull-right">
 							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
 							<i class="fa fa-comments"></i> {{commentCount _id}}
@@ -55,7 +72,7 @@
 							{{> avatar userId=owner shape="circle"}}
 						</a>
 						<div class="media-body">
-							<p>{{content}}</p>
+							<p>{{postWrapper.content}}</p>
 							{{#if $eq owner User._id}}
 							<small>
 								{{#afModal title="Update post" omitFields="createdAt,updatedAt,owner" class="text-primary" collection="Posts" operation="update" doc=_id}}
